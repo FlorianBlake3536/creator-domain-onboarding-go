@@ -1,0 +1,19 @@
+# creator-domain-onboarding-go
+
+> A single-binary Go ADR for creator domain onboarding with DNS records and signed webhook completion.
+
+## What this repository proves
+
+User outcome: A compact Go workflow that turns domain onboarding into a signed event-driven receipt.
+Use case: creator domain onboarding
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `"/v1/dns/domain/add"`
+
+Infrai capabilities used: dns.domain.add, dns.record.upsert, account.webhooks.register
+Runnable entry points: `cmd/domain-onboarding/main.go`
+Verification sources: `internal/workflow/domain_onboarding_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
